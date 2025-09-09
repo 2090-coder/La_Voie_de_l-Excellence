@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f7fa; /* fallback si image non chargée */
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: darkgreen;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+header .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header .logo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+.admin {
+  margin-bottom: 2rem;
+}
+
+.admin-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 1rem 0;
+  border: 3px solid #004080;
+}
+
+.presentation video {
+  width: 80%;
+  max-width: 600px;
+  border: 3px solid #004080;
+  border-radius: 10px;
+}
+
+footer {
+  background: #004080;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* ==== Chat avec image de fond ==== */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 600px;
+  border: 2px solid #004080;
+  border-radius: 10px;
+  background-image: url("voie_excellence.webp"); /* remplace par ton image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* overlay semi-transparent pour lisibilité et clics activés */
+.chat-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.8);
+  z-index: 0;
+  pointer-events: none; /* ⚡ permet de cliquer sur inputs et boutons */
+}
+
+#messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1; /* messages au-dessus de l'overlay */
+}
+
+.message {
+  background: #f0f0f0;
+  margin: 5px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.admin-msg {
+  background: green;
+  color: white;
+}
+
+.time {
+  font-size: 0.8em;
+  color: gray;
+  margin-left: 10px;
+}
+
+/* === Entrée message verticale === */
+.chat-input {
+  display: flex;
+  flex-direction: column; /* éléments alignés verticalement */
+  gap: 10px; /* espace entre input et bouton */
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background: rgba(249,249,249,0.9); /* léger fond semi-transparent */
+  position: relative;
+  z-index: 1; /* inputs et bouton au-dessus de l'overlay */
+}
+
+.chat-input input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.chat-input button {
+  background: #004080;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.chat-input button:hover {
+  background: #0066cc;
+}
+
+/* === Pseudo choisi en haut === */
+.pseudo-fixed {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #004080;
+  position: relative;
+  z-index: 1; /* pseudo au-dessus de l'overlay */
+}
