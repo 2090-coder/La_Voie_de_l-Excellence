@@ -1,59 +1,55 @@
-// Chargement des messages sauvegardés
-window.onload = function() {
-  loadMessages();
-};
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menuBtn");
+  const sidebar = document.querySelector(".sidebar");
+  if (menuBtn && sidebar) menuBtn.addEventListener("click", () => sidebar.classList.toggle("open"));
 
-// Envoi d’un message
-function sendMessage() {
-  const pseudo = document.getElementById("pseudo").value.trim();
-  const message = document.getElementById("message").value.trim();
-
-  if (message === "") return;
-
-  let finalPseudo = pseudo || "Anonyme";
-
-  // Si c’est l’admin
-  if (finalPseudo.toLowerCase() === "bengz") {
-    finalPseudo = "BENGZ (Admin)";
-  }
-
-  const msg = {
-    pseudo: finalPseudo,
-    text: message,
-    time: new Date().toLocaleTimeString()
-  };
-
-  // Sauvegarde dans LocalStorage
-  let chat = JSON.parse(localStorage.getItem("chat")) || [];
-  chat.push(msg);
-  localStorage.setItem("chat", JSON.stringify(chat));
-
-  // Affiche directement
-  displayMessage(msg);
-
-  document.getElementById("message").value = "";
-}
-
-// Charger les messages existants
-function loadMessages() {
-  const chat = JSON.parse(localStorage.getItem("chat")) || [];
-  chat.forEach(displayMessage);
-}
-
-// Afficher un message
-function displayMessage(msg) {
   const messagesDiv = document.getElementById("messages");
+  const sendBtn = document.getElementById("sendBtn");
+  const pseudoInput = document.getElementById("pseudo");
+  const messageInput = document.getElementById("message");
+  if (!messagesDiv || !messageInput) return;
 
-  const msgDiv = document.createElement("div");
-  msgDiv.classList.add("message");
+  const getChat = () => { try { return JSON.parse(localStorage.getItem("voie_excellence_chat")) || []; } catch { return []; } };
+  const saveChat = chat => localStorage.setItem("voie_excellence_chat", JSON.stringify(chat));
 
-  if (msg.pseudo.includes("Admin")) {
-    msgDiv.classList.add("admin-msg");
+  function displayMessage(msg) {
+    const msgDiv = document.createElement("div");
+    msgDiv.className = "message" + (msg.admin ? " admin-msg" : "");
+    const author = document.createElement("strong");
+    const text = document.createElement("span");
+    const time = document.createElement("span");
+    author.textContent = msg.pseudo + ": ";
+    text.textContent = msg.text + " ";
+    time.className = "time";
+    time.textContent = msg.time;
+    msgDiv.append(author, text, time);
+    messagesDiv.appendChild(msgDiv);
   }
 
-  msgDiv.innerHTML = `<strong>${msg.pseudo}:</strong> ${msg.text} 
-                      <span class="time">${msg.time}</span>`;
+  function loadMessages() {
+    messagesDiv.innerHTML = "";
+    getChat().forEach(displayMessage);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  }
 
-  messagesDiv.appendChild(msgDiv);
-  messagesDiv.scrollTop = messagesDiv.scrollHeight;
-}
+  function sendMessage() {
+    const text = messageInput.value.trim();
+    if (!text) return;
+    let pseudo = (pseudoInput?.value || "").trim() || "Anonyme";
+    const normalized = pseudo.toLowerCase();
+    const admin = ["bengz", "salomon", "salomon bengz", "salomon shukuru bengz"].includes(normalized);
+    if (admin) pseudo = "BENGZ (Admin)";
+    const msg = { pseudo, text, time: new Date().toLocaleTimeString("fr-FR", {hour:"2-digit", minute:"2-digit"}), admin };
+    const chat = getChat();
+    chat.push(msg);
+    saveChat(chat);
+    displayMessage(msg);
+    messageInput.value = "";
+    messageInput.focus();
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  }
+
+  sendBtn?.addEventListener("click", sendMessage);
+  messageInput.addEventListener("keydown", event => { if (event.key === "Enter") sendMessage(); });
+  loadMessages();
+});
