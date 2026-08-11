@@ -3,34 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChatBENGZ - La Voie de l'Excellence</title>
+  <title>ChatBENGZ | 3e Électronique</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>🤖 ChatBENGZ Basique</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="groupe.html">Discussion du groupe</a></li>
-        <li><a href="chatGPT.html">ChatBENGZ</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="chat-container">
-    <div id="messages"></div>
-
-    <div class="chat-input">
-      <input type="text" id="message" placeholder="Écris ta question ici...">
-      <button onclick="sendMessage()">Envoyer</button>
-    </div>
-  </main>
-
-  <footer>
-    <p>💡 ChatBENGZ Basique pour le groupe 2e Électronique</p>
-  </footer>
-
+  <aside class="sidebar">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Logo"><span>La Voie de<br><strong>l'Excellence</strong></span></a>
+    <div class="class-badge">3e ÉLECTRONIQUE · 2026–2027</div>
+    <nav class="side-nav"><a href="index.html">🏠 <span>Tableau de bord</span></a><a href="groupe.html">💬 <span>Discussion</span></a><a class="active" href="chatGPT.html">🤖 <span>ChatBENGZ</span></a><a href="index.html#cours">📚 <span>Matières</span></a><a href="index.html#devoirs">📝 <span>Devoirs</span></a></nav>
+    <div class="sidebar-bottom"><div class="mini-profile"><img src="admin.jpg" alt="Salomon BENGZ"><div><strong>Salomon BENGZ</strong><small>Administrateur</small></div></div></div>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar"><button class="menu-btn" id="menuBtn">☰</button><div><p class="eyebrow">ASSISTANT DE LA CLASSE</p><h1>ChatBENGZ</h1></div><div class="top-actions"><a class="profile-chip" href="index.html#profil"><img src="admin.jpg" alt="Salomon BENGZ"><span>Salomon BENGZ</span></a></div></header>
+    <main class="dashboard">
+      <section class="hero-card" style="min-height:180px"><div class="hero-copy"><span class="pill">IA · ÉLECTRONIQUE · PROGRAMMATION</span><h2>Pose ta question à <span>ChatBENGZ.</span></h2><p>Un assistant pédagogique basique pour réviser les notions d'électronique, Arduino, programmation et projets.</p></div><div class="hero-profile"><div class="avatar-ring"><img src="admin.jpg" alt="Salomon BENGZ"></div><strong>ChatBENGZ 🤖</strong><span>Assistant de la classe</span></div></section>
+      <div class="chat-container"><div id="messages"></div><div class="chat-input"><input type="text" id="message" placeholder="Écris ta question ici…" autocomplete="off"><button onclick="sendMessage()">Envoyer</button></div></div>
+    </main>
+    <footer><span>© 2026–2027 · La Voie de l'Excellence · 3e Électronique</span><span>ChatBENGZ · version pédagogique</span></footer>
+  </div>
   <script src="chatgpt.js"></script>
 </body>
 </html>
