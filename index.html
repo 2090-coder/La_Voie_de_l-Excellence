@@ -3,84 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Voie de l'Excellence – 2e Électronique</title>
+  <meta name="description" content="Espace numérique de la classe de 3e Électronique — La Voie de l'Excellence.">
+  <title>La Voie de l'Excellence | 3e Électronique</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Logo du groupe">
-      <h1>La Voie de l'Excellence – 2e Électronique</h1>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="groupe.html">Discussion du groupe</a></li>
-        <li><a href="chatGPT.html">ChatBENGZ</a></li>
-      </ul>
+  <aside class="sidebar">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="Logo La Voie de l'Excellence">
+      <span>La Voie de<br><strong>l'Excellence</strong></span>
+    </a>
+    <div class="class-badge">3e ÉLECTRONIQUE · 2026–2027</div>
+    <nav class="side-nav" aria-label="Navigation principale">
+      <a class="active" href="index.html">🏠 <span>Tableau de bord</span></a>
+      <a href="groupe.html">💬 <span>Discussion</span></a>
+      <a href="chatGPT.html">🤖 <span>ChatBENGZ</span></a>
+      <a href="#cours">📚 <span>Matières</span></a>
+      <a href="#devoirs">📝 <span>Devoirs</span></a>
+      <a href="#annonces">📢 <span>Annonces</span></a>
     </nav>
-  </header>
+    <div class="sidebar-bottom">
+      <div class="mini-profile">
+        <img src="admin.jpg" alt="Profil de Salomon BENGZ">
+        <div><strong>Salomon BENGZ</strong><small>Administrateur</small></div>
+      </div>
+    </div>
+  </aside>
 
-  <main>
-    <!-- Section administrateur -->
-    <section class="admin">
-      <h2>Administrateur du groupe</h2>
-      <img src="admin.jpg" alt="Photo de Salomon Shukuru BENGZ" class="admin-photo">
-      <p><strong>Salomon Shukuru BENGZ</strong> – Administrateur de La Voie de l’Excellence</p>
-    </section>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+      <div>
+        <p class="eyebrow">ESPACE DE CLASSE</p>
+        <h1>3e Électronique</h1>
+      </div>
+      <div class="top-actions">
+        <a class="icon-btn" href="groupe.html" title="Discussion">💬</a>
+        <a class="profile-chip" href="#profil">
+          <img src="admin.jpg" alt="Salomon BENGZ">
+          <span>Salomon BENGZ</span>
+        </a>
+      </div>
+    </header>
 
-    <!-- Section vidéo -->
-    <section class="presentation">
-      <h2>Vidéo de présentation</h2><br><br>
-      <video controls>
-        <source src="présentation.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas la vidéo.
-      </video>
-    </section><br><br>
+    <main class="dashboard">
+      <section class="hero-card">
+        <div class="hero-copy">
+          <span class="pill">ANNÉE SCOLAIRE 2026–2027</span>
+          <h2>Bienvenue dans notre<br><span>classe numérique.</span></h2>
+          <p>Un espace pour apprendre, partager les cours, suivre les devoirs et construire ensemble notre parcours en électronique.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#cours">Explorer les matières →</a>
+            <a class="btn light" href="groupe.html">Ouvrir la discussion</a>
+          </div>
+        </div>
+        <div class="hero-profile">
+          <div class="avatar-ring"><img src="admin.jpg" alt="Salomon BENGZ"></div>
+          <strong>Salomon BENGZ</strong>
+          <span>Administrateur de la classe</span>
+        </div>
+      </section>
 
-    <!-- README / Instructions -->
-    <section class="readme">
-      <h2>📖 Guide d'utilisation du site</h2><br><br>
-      <p>Bienvenue sur le site officiel de <strong>La Voie de l’Excellence – 2e Électronique</strong> ! Ce site a été conçu pour que notre groupe puisse :</p>
-      <ul>
-        <li>💬 Discuter en temps réel dans la <strong>Discussion du groupe</strong>, comme sur WhatsApp.</li>
-        <li>🤖 Poser des questions à notre assistant intelligent <strong>ChatBENGZ</strong>, qui répondra selon vos besoins en électronique, projets ou conseils généraux.</li>
-        <li>📚 Découvrir le contenu, les projets et les informations partagées par l’administrateur et les membres.</li>
-      </ul>
+      <section class="stats-grid" aria-label="Résumé de la classe">
+        <article class="stat-card"><span class="stat-icon blue">📚</span><div><strong>06</strong><span>Matières</span></div></article>
+        <article class="stat-card"><span class="stat-icon orange">📝</span><div><strong>03</strong><span>Devoirs à suivre</span></div></article>
+        <article class="stat-card"><span class="stat-icon purple">📢</span><div><strong>01</strong><span>Annonce récente</span></div></article>
+        <article class="stat-card"><span class="stat-icon green">⚡</span><div><strong>100%</strong><span>Esprit d'équipe</span></div></article>
+      </section>
 
-      <p><strong>Comment utiliser :</strong></p>
-      <ol>
-        <li>Dans <strong>Discussion du groupe</strong> :
-          <ul>
-            <li>Entrez votre prénom dans le champ “Ton prénom”.</li>
-            <li>Écrivez votre message.</li>
-            <li>Cliquez sur <strong>Envoyer</strong>. Votre message apparaîtra dans le chat.</li>
-          </ul>
-        </li>
-        <li>Dans <strong>ChatBENGZ</strong> :
-          <ul>
-            <li>Posez vos questions sur l’électronique, Arduino, composants ou tout autre sujet.</li>
-            <li>ChatBENGZ répondra intelligemment selon les mots-clés et vous donnera des conseils précis.</li>
-            <li>Pour obtenir de meilleures réponses, soyez clair et précis dans vos questions.</li>
-          </ul>
-        </li>
-      </ol>
+      <div class="content-grid">
+        <section class="main-column">
+          <div class="section-heading" id="annonces"><div><p class="eyebrow">À LA UNE</p><h2>Annonces de la classe</h2></div><span class="live-dot">● EN LIGNE</span></div>
+          <article class="announcement-card">
+            <div class="announcement-head"><img src="admin.jpg" alt="Salomon BENGZ"><div><strong>Salomon BENGZ</strong><small>Administrateur · Aujourd'hui</small></div><span>📢</span></div>
+            <h3>Bienvenue en 3e Électronique ! 🎓</h3>
+            <p>Nous entrons dans une nouvelle étape. Cet espace devient notre classroom : cours, projets, devoirs, discussions et ressources seront progressivement regroupés ici.</p>
+            <div class="announcement-tags"><span>Électronique</span><span>Projets</span><span>2026–2027</span></div>
+          </article>
 
-      <p><strong>Règles du groupe :</strong></p>
-      <ul>
-        <li>Respectez tous les membres et l’administrateur <strong>Salomon Shukuru BENGZ</strong>.</li>
-        <li>Évitez les messages inappropriés ou hors sujet.</li>
-        <li>Partagez vos connaissances et aidez les autres quand vous pouvez.</li>
-        <li>Amusez-vous et profitez de ce groupe pour apprendre et progresser ensemble !</li>
-      </ul>
+          <div class="section-heading" id="cours"><div><p class="eyebrow">APPRENDRE</p><h2>Nos matières</h2></div><a href="#cours">Voir tout</a></div>
+          <section class="subject-grid">
+            <a class="subject-card electronics" href="#cours"><span>⚡</span><div><strong>Électronique</strong><small>Circuits · composants · mesures</small></div><b>→</b></a>
+            <a class="subject-card programming" href="chatGPT.html"><span>💻</span><div><strong>Programmation</strong><small>Arduino · C/C++ · logique</small></div><b>→</b></a>
+            <a class="subject-card automation" href="#cours"><span>⚙️</span><div><strong>Automatisme</strong><small>Commandes · systèmes · relais</small></div><b>→</b></a>
+            <a class="subject-card networks" href="#cours"><span>🌐</span><div><strong>Réseaux</strong><small>Communication · IoT · systèmes</small></div><b>→</b></a>
+            <a class="subject-card maths" href="#cours"><span>📐</span><div><strong>Mathématiques</strong><small>Calculs · formules · applications</small></div><b>→</b></a>
+            <a class="subject-card projects" href="#cours"><span>🛠️</span><div><strong>Travaux pratiques</strong><small>Projets · laboratoire · défis</small></div><b>→</b></a>
+          </section>
 
-      <p>Nous espérons que vous apprécierez l’expérience et que vous utiliserez pleinement toutes les fonctionnalités du site. 🚀</p>
-      <p><em>Créé avec passion par <strong>Salomon Shukuru BENGZ</strong></em></p>
-    </section>
-  </main>
+          <div class="section-heading" id="devoirs"><div><p class="eyebrow">À FAIRE</p><h2>Travail à suivre</h2></div></div>
+          <section class="tasks-card">
+            <div class="task"><span class="task-dot urgent"></span><div><strong>Préparer le prochain cours d'électronique</strong><small>Lire les notions vues en classe</small></div><span class="date-badge">À venir</span></div>
+            <div class="task"><span class="task-dot"></span><div><strong>Exercice de programmation</strong><small>Réviser conditions, boucles et fonctions</small></div><span class="date-badge">À venir</span></div>
+            <div class="task"><span class="task-dot"></span><div><strong>Projet pratique</strong><small>Préparer les idées de montage de l'équipe</small></div><span class="date-badge">À venir</span></div>
+          </section>
+        </section>
 
-  <footer>
-    <p>© 2025-2026 – La Voie de l'Excellence – 2e Électronique | Créé par Salomon Shukuru BENGZ</p>
-  </footer>
+        <aside class="right-column">
+          <section class="side-card profile-card" id="profil">
+            <div class="profile-cover"></div>
+            <div class="profile-body"><div class="big-avatar"><img src="admin.jpg" alt="Salomon BENGZ"></div><h3>Salomon BENGZ</h3><p>Administrateur · 3e Électronique</p><div class="profile-line"><span>💬</span> Gestion de la classe numérique</div><div class="profile-line"><span>⚡</span> Projets électroniques</div></div>
+          </section>
+          <section class="side-card quick-card"><h3>Accès rapide</h3><a href="groupe.html"><span>💬</span><div><strong>Discussion</strong><small>Parler avec la classe</small></div>→</a><a href="chatGPT.html"><span>🤖</span><div><strong>ChatBENGZ</strong><small>Assistant électronique</small></div>→</a><a href="présentation.mp4"><span>🎬</span><div><strong>Présentation</strong><small>Découvrir la classe</small></div>→</a></section>
+          <section class="side-card quote-card"><span>“</span><p>La réussite n'est pas une destination. C'est une discipline que nous construisons ensemble.</p><small>— La Voie de l'Excellence</small></section>
+        </aside>
+      </div>
+    </main>
+
+    <footer><span>© 2026–2027 · La Voie de l'Excellence · 3e Électronique</span><span>Créé pour apprendre, partager et progresser.</span></footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
