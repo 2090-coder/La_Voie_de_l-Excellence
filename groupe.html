@@ -3,36 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discussion du groupe - La Voie de l'Excellence</title>
+  <title>Discussion | 3e Électronique</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>💬 Discussion du groupe</h1>
-    <p>Bienvenue dans le chat de <strong>La Voie de l'Excellence – 2e Électronique</strong></p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="groupe.html">Discussion du groupe</a></li>
-        <li><a href="chatGPT.html">ChatBENGZ</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="chat-container">
-    <div id="messages"></div>
-
-    <div class="chat-input">
-      <input type="text" id="pseudo" placeholder="Ton prénom (ex: Salomon)">
-      <input type="text" id="message" placeholder="Écris ton message...">
-      <button onclick="sendMessage()">Envoyer</button>
-    </div>
-  </main>
-
-  <footer>
-    <p>Administrateur : <strong>Salomon Shukuru BENGZ</strong> 👑</p>
-  </footer>
-
+  <aside class="sidebar">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Logo"><span>La Voie de<br><strong>l'Excellence</strong></span></a>
+    <div class="class-badge">3e ÉLECTRONIQUE · 2026–2027</div>
+    <nav class="side-nav"><a href="index.html">🏠 <span>Tableau de bord</span></a><a class="active" href="groupe.html">💬 <span>Discussion</span></a><a href="chatGPT.html">🤖 <span>ChatBENGZ</span></a><a href="index.html#cours">📚 <span>Matières</span></a><a href="index.html#devoirs">📝 <span>Devoirs</span></a></nav>
+    <div class="sidebar-bottom"><div class="mini-profile"><img src="admin.jpg" alt="Salomon BENGZ"><div><strong>Salomon BENGZ</strong><small>Administrateur</small></div></div></div>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar"><button class="menu-btn" id="menuBtn">☰</button><div><p class="eyebrow">ESPACE DE CLASSE</p><h1>Discussion de la classe</h1></div><div class="top-actions"><a class="profile-chip" href="index.html#profil"><img src="admin.jpg" alt="Salomon BENGZ"><span>Salomon BENGZ</span></a></div></header>
+    <main class="dashboard">
+      <section class="hero-card" style="min-height:190px"><div class="hero-copy"><span class="pill">DISCUSSION · 3e ÉLECTRONIQUE</span><h2>Notre espace pour <span>échanger.</span></h2><p>Pose une question, partage une idée de projet ou aide un camarade. Les messages de cette version sont enregistrés dans le navigateur.</p></div><div class="hero-profile"><div class="avatar-ring"><img src="admin.jpg" alt="Salomon BENGZ"></div><strong>Salomon BENGZ</strong><span>Administrateur</span></div></section>
+      <div class="chat-container">
+        <div id="messages"></div>
+        <div class="chat-input">
+          <input type="text" id="pseudo" placeholder="Ton prénom">
+          <input type="text" id="message" placeholder="Écris ton message…" autocomplete="off">
+          <button id="sendBtn">Envoyer</button>
+        </div>
+      </div>
+    </main>
+    <footer><span>© 2026–2027 · La Voie de l'Excellence · 3e Électronique</span><span>Administrateur : Salomon BENGZ</span></footer>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
