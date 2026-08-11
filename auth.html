@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Connexion | La Voie de l'Excellence</title><link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+  <main class="auth-shell">
+    <section class="auth-brand"><img src="logo.png" alt="La Voie de l'Excellence"><span class="pill">3e ÉLECTRONIQUE · 2026–2027</span><h1>Bienvenue dans<br><strong>notre classroom.</strong></h1><p>Connecte-toi pour accéder aux cours, devoirs, annonces, ressources et discussions de la classe.</p></section>
+    <section class="auth-card">
+      <div class="auth-tabs"><button class="active" data-mode="login">Connexion</button><button data-mode="signup">Inscription</button></div>
+      <form id="authForm">
+        <div class="field signup-only"><label>Nom complet</label><input id="fullName" type="text" placeholder="Ex. Jean Kabila"></div>
+        <div class="field"><label>Adresse e-mail</label><input id="email" type="email" required placeholder="eleve@classe.com"></div>
+        <div class="field"><label>Mot de passe</label><input id="password" type="password" required minlength="6" placeholder="••••••••"></div>
+        <button class="btn primary auth-submit" type="submit">Se connecter →</button>
+        <p id="authMessage" class="auth-message"></p>
+      </form>
+      <div class="auth-note">🛡️ Les rôles et permissions sont gérés par la base de données. Ne partage jamais ton mot de passe.</div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
