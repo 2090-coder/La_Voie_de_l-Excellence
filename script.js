@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sendBtn = document.getElementById("sendBtn");
   const pseudoInput = document.getElementById("pseudo");
   const messageInput = document.getElementById("message");
-  if (!messagesDiv || !messageInput) return;
+  if (!messagesDiv || !messageInput || !pseudoInput) return;
 
   const getChat = () => { try { return JSON.parse(localStorage.getItem("voie_excellence_chat")) || []; } catch { return []; } };
   const saveChat = chat => localStorage.setItem("voie_excellence_chat", JSON.stringify(chat));
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function sendMessage() {
     const text = messageInput.value.trim();
     if (!text) return;
-    let pseudo = (pseudoInput?.value || "").trim() || "Anonyme";
+    let pseudo = pseudoInput.value.trim() || "Anonyme";
     const normalized = pseudo.toLowerCase();
     const admin = ["bengz", "salomon", "salomon bengz", "salomon shukuru bengz"].includes(normalized);
     if (admin) pseudo = "BENGZ (Admin)";
